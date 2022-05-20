@@ -1,0 +1,17 @@
+<div class="plan-card" [ngClass]="{'active': plan.plan.is_active === 'true'}">
+  <div class="container">
+    <div class="plan-card__header">
+      <span>{{plan.plan.currency}}</span>
+      <h3>{{plan.plan.title}}</h3>
+    </div>
+    <span class="period">{{plan.plan.period}}</span>
+  
+    <ul class="plan-card__benefits">
+      <li *ngFor="let item of plan.plan.modular_blocks; let i = index">
+        {{item.benefits.benefit_title}}
+      </li>
+    </ul>
+  </div>
+
+  <a class="cta" target="_blank" [href]="plan.plan.call_to_action.href">{{plan.plan.call_to_action.title}}</a>
+</div>

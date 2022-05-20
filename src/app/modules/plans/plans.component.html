@@ -1,0 +1,20 @@
+<div class="plans">
+  <h1>{{pageData?.title}}</h1>
+
+  <div class="content" [innerHTML]="pageData?.description">
+  </div>
+
+  <div class="plans-container">
+    <h2>{{plansInformation?.title}}</h2>
+
+    <p>{{plansInformation?.short_description}}</p>
+
+    <div class="plans-container__cards">
+      <app-plan-card
+        *ngFor="let plan of plansInformation?.modular_blocks"
+        [plan]="plan"
+      ></app-plan-card>
+    </div>
+  </div>
+
+</div>
